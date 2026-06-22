@@ -377,3 +377,139 @@ footer {
               margin-left 0.5s cubic-bezier(.4, 0, .2, 1);
 }
 
+.resume-btn:hover .r-label {
+  max-width: 200px;
+  opacity: 1;
+  margin-left: 8px;
+}
+
+/* dial */
+.dial-cluster {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 500;
+  width: 320px;
+  height: 300px;
+  pointer-events: none;
+}
+
+@media (max-width: 760px) {
+  .dial-cluster {
+    transform: scale(0.62);
+    transform-origin: top left;
+  }
+}
+
+.dial-knob-wrap {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 132px;
+  height: 132px;
+  z-index: 4;
+}
+
+.dial-knob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #fff, #dde7f7, #fff, #dde7f7, #fff, #dde7f7, #fff, #dde7f7, #fff);
+  border: 1px solid rgba(34, 38, 43, 0.12);
+  box-shadow: 0 6px 18px rgba(34, 38, 43, 0.14);
+  transform: translate(-50%, -50%) rotate(70deg);
+  transition: width 0.5s cubic-bezier(.4, 0, .2, 1),
+              height 0.5s cubic-bezier(.4, 0, .2, 1),
+              transform 0.6s cubic-bezier(.4, 0, .2, 1),
+              box-shadow 0.3s ease;
+}
+
+.dial-knob.enlarge {
+  width: 118px;
+  height: 118px;
+  box-shadow: 0 10px 26px rgba(34, 38, 43, 0.22);
+}
+
+.dial-center-face {
+  position: absolute;
+  inset: 22%;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px rgba(34, 38, 43, 0.08);
+}
+
+.dial-marker-pivot {
+  position: absolute;
+  top: 72px;
+  left: 72px;
+  z-index: 6;
+}
+
+.marker-arm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  transform: rotate(70deg);
+  transition: transform 0.65s cubic-bezier(.4, 0, .2, 1);
+}
+
+.marker-slot {
+  position: absolute;
+  top: -47px;
+  left: -11px;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-70deg);
+  transition: transform 0.65s cubic-bezier(.4, 0, .2, 1);
+}
+
+.marker-numeral {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: 0.5px;
+  transition: opacity 0.16s ease, transform 0.16s ease;
+}
+
+.marker-numeral.fade-out {
+  opacity: 0;
+  transform: scale(0.4);
+}
+
+.dial-label {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ink-faint);
+  z-index: 10;
+  padding: 10px 14px;
+  pointer-events: auto;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.22s ease, letter-spacing 0.22s ease;
+}
+
+.dial-label:hover,
+.dial-label.active {
+  color: var(--ink);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+/* certifications */
+#certifications {
+  padding: 60px 0;
+}
+
